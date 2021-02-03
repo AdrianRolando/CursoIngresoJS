@@ -10,8 +10,10 @@ function mostrarAumento()
 	var importePars;
 	var importeConAumento;
 	
-    //Asignación
+    //Asignación mediante ID
 	importe = txtIdSueldo.value;
+
+	//Cambiamos el valor string al tipo de dato int con parseInt()
 	importePars = parseInt(importe);
 
 	//Calcular aumento del 10%

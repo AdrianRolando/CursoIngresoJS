@@ -9,13 +9,20 @@ function SacarResto()
 	var dividendo;
 	var divisor;
 	var resultado;
+	var dividendoPars;
+	var divisorPars;
 
-	//Asignación
+	//Asignación mediante ID
 	dividendo = txtIdNumeroDividendo.value;
 	divisor = txtIdNumeroDivisor.value;
 	
-	resultado = (parseInt(dividendo) % parseInt(divisor));
+	//Cambiamos el valor string al tipo de dato int con parseInt()
+	dividendoPars = parseInt(dividendo);  
+	divisorPars = parseInt(divisor);
+	
+	//Calculamos el resto
+	resultado = dividendoPars % divisorPars;
 
-	//Mostrar
+	//Mostrar resultado
 	alert("El resto de esta división es " + resultado);
 }
