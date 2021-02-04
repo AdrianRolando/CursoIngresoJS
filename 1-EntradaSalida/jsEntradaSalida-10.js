@@ -8,14 +8,23 @@ function mostrarAumento()
 	//Declaración
 	var importe;
 	var importePars;
+	var descuento;
 	var importeConDescuento;
 	
-    //Asignación
+	//Asignación del valor de descuento
+	descuento = 25;
+
+	//Asignación mediante ID
 	importe = txtIdImporte.value;
+
+	//Cambiamos el valor string al tipo de dato int con parseInt()
 	importePars = parseInt(importe);
 
 	//Calcular descuento del 25%
-	importeConDescuento = (importePars * 0.75);
+	descuento = importePars * descuento / 100;
+
+	//Restar el descuento al importe
+	importeConDescuento = importePars - descuento;
 
 	//Mostrar descuento en el ID
 	txtIdResultado.value = importeConDescuento;
