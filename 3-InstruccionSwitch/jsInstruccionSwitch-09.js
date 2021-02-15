@@ -9,7 +9,7 @@ en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aum
 function mostrar()
 {
 	var estadia;
-	var estacionDelAño;
+	var estacion;
 	var localidad;
 	var precioConDescuento;
 	var precioConAumento;
@@ -17,10 +17,10 @@ function mostrar()
 	var aumento;
 
 	estadia = 15000;
-	estacionDelAño = txtIdEstacion.value;
+	estacion = txtIdEstacion.value;
 	localidad = txtIdDestino.value;
 	
-	switch (estacionDelAño) {
+	switch (estacion) {
 		case "Invierno":
 			if(localidad == "Bariloche"){
 				aumento = 0.20;
