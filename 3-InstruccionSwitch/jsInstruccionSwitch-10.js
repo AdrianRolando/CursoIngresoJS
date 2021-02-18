@@ -18,31 +18,38 @@ function mostrar()
 
 	switch (estacion) {
 		case "Invierno":
-			if(localidad == "Bariloche"){
-				alert("Se viaja");
-			}
-			else{
-				alert("No se viaja");
+			switch (localidad) {
+				case "Bariloche":
+					alert("Se viaja.");
+				break;
+				default:
+					alert("No se viaja.");
+				break;
 			}
 		break;
 		case "Verano":
-			if(localidad == "Cataratas" || localidad == "Mar del plata"){
-				alert("Se viaja");
-			}
-			else{
-				alert("No se viaja");
+			switch (localidad) {
+				case "Mar del plata":
+				case "Cataratas":
+					alert("Se viaja.");
+				break;
+				default:
+					alert("No se viaja.");
+					break;
 			}
 		break;
 		case "Primavera":
-			if(localidad == "Bariloche"){
-				alert("No se viaja");
-			}
-			else{
-				alert("Se viaja");
+			switch (localidad) {
+				case "Bariloche":
+					alert("No se viaja.");
+				break;
+				default:
+					alert("Se viaja.");
+				break;
 			}
 		break;
 		default:
-			alert("Se viaja")
+			alert("Se viaja");
 		break;
 	}
 }//FIN DE LA FUNCIÓN

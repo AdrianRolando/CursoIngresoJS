@@ -14,15 +14,93 @@ function CalcularPrecio ()
     var precioFinal;
     var precioTotalConDescuento;
     var impuestoIIBB;
-    var precioUnitarioLampara = 35;
+    var precioUnitarioLampara;
     var marcaLampara;
 
+    precioUnitarioLampara = 35;
     cantidadLamparitas = parseInt(txtIdCantidad.value);
     marcaLampara = Marca.value;
     precioFinal = cantidadLamparitas * precioUnitarioLampara;
+
+    
+    switch (cantidadLamparitas) {
+        case 1:
+        case 2:
+            txtIdprecioDescuento.value = precioFinal;
+        break;
+        case 3:
+            switch (marcaLampara) {
+                case "ArgentinaLuz":
+                    descuento = 0.15;
+                break;
+                case "FelipeLamparas":
+                    descuento = 0.10;
+                break;
+                default:
+                    descuento = 0.05;
+                break;
+            }
+        break;
+        case 4:
+            switch (marcaLampara){
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento = 0.25;
+                break;
+                default:
+                    descuento = 0.20;
+                break;
+            }
+        break;
+        case 5:
+            switch (marcaLampara) {
+                case "ArgentinaLuz":
+                    descuento = 0.40;
+                break;
+                default:
+                    descuento = 0.30;
+                break;
+            }
+        break;
+        default:
+            descuento = 0.50;
+        break;
+    }
+    precioTotalConDescuento = precioFinal - (precioFinal * descuento);
+    txtIdprecioDescuento.value = precioTotalConDescuento;
+    
+    if(precioTotalConDescuento > 120){
+        impuestoIIBB = precioTotalConDescuento * 0.10;
+        precioTotalConDescuento = precioTotalConDescuento + impuestoIIBB;
+         
+        txtIdprecioDescuento.value = precioTotalConDescuento;
+        alert("Usted pago $" + impuestoIIBB + " de IIBB");   
+    }
+}
+    /*switch (marcaLampara) {
+        case "ArgentinaLuz":
+            switch (cantidadLamparitas) {
+                case 3:
+                    descuento = 0.15;
+                break;
+                case 4:
+                    descuento = 0.25;
+                break;
+                case 5:
+                    descuento = 0.40;
+                default:
+                    break;
+            }
+        break;
+        default:
+        break;
+    }*/
+
+    //precioTotalConDescuento = precioFinal - (precioFinal * descuento);
+    //txtIdprecioDescuento.value = precioTotalConDescuento;
     
 
-    if(cantidadLamparitas > 5){
+    /*if(cantidadLamparitas > 5){
         precioTotalConDescuento = precioFinal - (precioFinal * 0.50);
         txtIdprecioDescuento.value = precioTotalConDescuento;
     }

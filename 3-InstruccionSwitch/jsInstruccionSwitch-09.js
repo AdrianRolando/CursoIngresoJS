@@ -13,14 +13,59 @@ function mostrar()
 	var localidad;
 	var precioConDescuento;
 	var precioConAumento;
-	var descuento;
-	var aumento;
-
+	
 	estadia = 15000;
 	estacion = txtIdEstacion.value;
 	localidad = txtIdDestino.value;
 	
 	switch (estacion) {
+		case "Invierno":
+			switch (localidad){
+				case "Bariloche":
+					precioConAumento = estadia + (estadia * 0.20);
+					alert("El precio de estadia es de " + precioConAumento);
+				break;
+				case "Mar del plata":
+					precioConDescuento = estadia - (estadia * 0.20);
+					alert("El precio de estadia es de " + precioConDescuento);
+				break;
+				default:
+					precioConDescuento = estadia - (estadia * 0.10);
+					alert("El precio de estadia es de " + precioConDescuento);
+				break;
+			}
+		break
+		case "Verano":
+			switch(localidad){
+				case "Bariloche":
+					precioConDescuento = estadia - (estadia * 0.20);
+					alert("El precio de estadia es de " + precioConDescuento);
+				break;
+				case "Mar del plata":
+					precioConAumento = estadia + (estadia * 0.20);
+					alert("El precio de estadia es de " + precioConAumento);
+				break;
+				default:
+					precioConAumento = estadia + (estadia * 0.10);
+					alert("El precio de estadia es de " + precioConAumento);
+				break;
+			}
+		break;
+		default:
+			switch (localidad) {
+				case "Cordoba":
+					alert("El precio de estadia es de "+ estadia); 
+				break;
+				default:
+					precioConAumento = estadia + (estadia * 0.10);
+					alert("El precio de estadia es de " + precioConAumento);
+				break;
+			}
+		break;
+	}
+}//FIN DE LA FUNCIÓN
+	
+	/*switch (estacion) {
 		case "Invierno":
 			if(localidad == "Bariloche"){
 				aumento = 0.20;
@@ -66,4 +111,4 @@ function mostrar()
 			}
 		break;
 	}
-}//FIN DE LA FUNCIÓN
+}//FIN DE LA FUNCIÓN*/
