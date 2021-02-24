@@ -24,6 +24,8 @@ function CalcularPrecio ()
 
     
     switch (cantidadLamparitas) {
+        case 0:
+            txtIdprecioDescuento.value = 0;
         case 1:
         case 2:
             txtIdprecioDescuento.value = precioFinal;
